@@ -29,7 +29,7 @@ mailing:
     template:
         defaults:
             layout: @@default
-        custom:
+        config:
             layout: @@default 
 ```
 
@@ -37,7 +37,7 @@ Templating and template options are under key **template**. At this moment, ther
 This default default layout is located in this package, you don't need to change anything. Unless you want your own layout.
 
 - The `defaults` should be untouched and it can be considered as base class. Your theme will be extending the default one.
-- The `custom` can be considered as child class, define your own theme.
+- The `config` can be considered as child class, define your own theme.
 
 Typical configuration would be override the default theme with some extra features. 
 
@@ -45,7 +45,7 @@ Typical configuration would be override the default theme with some extra featur
 template:
     defaults:
         layout: @@default
-    custom:
+    config:
         layout: @@mylayout
 ```
 
@@ -54,6 +54,8 @@ template:
 ## Usage
 
 Example is better then 1k words.
+
+### Builder
 
 ```php
 /** @var Contributte\Mailing\IMailBuilderFactory @inject */
@@ -80,4 +82,26 @@ $mail->send();
 
 At first moment it looks the `MailBuilder` break the SRP, but it's not true. `MailBulderFactory` creates the `MailBuilder`
 and provide the `MailSender` and `MailTemplate`. The `MailBuilder` is just tiny wrapper/builder with enjoyable API.
+
+### Template
+
+Each template has many internal variables:
+
+- `$_defaults` - refer default configuration
+- `$_config` - refer custom configuration
+- `$_mail` - refer mail configuration (can overrides subject, from, bcc, etc..)
+
+```smarty
+{layout $_config->layout}
+
+{block #header}
+    Awesome emails.
+{/block}
+
+{block #content}
+    Hello!
+{/block}
+```
+
+Each template has many blocks, take a look to source.
 
