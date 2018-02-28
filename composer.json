@@ -13,15 +13,16 @@
   ],
   "require": {
     "php": ">=5.6",
-    "latte/latte": "~2.4.7",
+    "nette/application": "^2.4.9",
+    "nette/di": "~2.4.10",
     "nette/mail": "~2.4.4",
-    "nette/di": "~2.4.10"
+    "nette/utils": "~2.4.9",
+    "latte/latte": "~2.4.7"
   },
   "require-dev": {
     "ninjify/qa": "^0.4.0",
     "ninjify/nunjuck": "^0.2.0",
-    "mockery/mockery": "^0.9.9",
-    "nette/application": "^2.4.9"
+    "mockery/mockery": "^0.9.9"
   },
   "autoload": {
     "psr-4": {
