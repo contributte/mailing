@@ -96,6 +96,30 @@ class MailBuilder
 	}
 
 	/**
+	 * @param string $email
+	 * @param string $name
+	 * @return self
+	 */
+	public function addBcc($email, $name = NULL)
+	{
+		$this->message->addBcc($email, $name);
+
+		return $this;
+	}
+
+	/**
+	 * @param string $email
+	 * @param string $name
+	 * @return self
+	 */
+	public function addCc($email, $name = NULL)
+	{
+		$this->message->addCc($email, $name);
+
+		return $this;
+	}
+
+	/**
 	 * @param string $subject
 	 * @return self
 	 */
