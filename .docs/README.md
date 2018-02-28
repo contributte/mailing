@@ -62,13 +62,15 @@ Example is better then 1k words.
 public $mailBuilderFactory;
 ```
 
-Thanks to `MailBulderFactory` we use create `MailBuilder` to setup and finally send email.
+Thanks to `MailBuilderFactory` we use create `MailBuilder` to setup and finally send email.
 
 ```php
 // Builder
 $mail = $this->mailBuilderFactory->create();
 $mail->setSubject('It is awesome');
 $mail->addTo($user->email);
+$mail->addBcc($user->email);
+$mail->addCcs($user->email);
 
 // Template
 $mail->setTemplateFile(__DIR__ . '/../../resources/awesome.latte');
@@ -81,7 +83,7 @@ $mail->send();
 ```
 
 At first moment it looks the `MailBuilder` break the SRP, but it's not true. `MailBulderFactory` creates the `MailBuilder`
-and provide the `MailSender` and `MailTemplate`. The `MailBuilder` is just tiny wrapper/builder with enjoyable API.
+and provides the `IMailSender` and `IMailTemplateFactory`. The `MailBuilder` is just tiny wrapper/builder with enjoyable API.
 
 ### Template
 

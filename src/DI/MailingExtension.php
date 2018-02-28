@@ -6,8 +6,8 @@ use Contributte\Mailing\IMailBuilderFactory;
 use Contributte\Mailing\IMailSender;
 use Contributte\Mailing\IMailTemplateFactory;
 use Contributte\Mailing\MailBuilderFactory;
-use Contributte\Mailing\MailSender;
-use Contributte\Mailing\MailTemplateFactory;
+use Contributte\Mailing\NetteMailSender;
+use Contributte\Mailing\NetteTemplateFactory;
 use Nette\DI\CompilerExtension;
 
 class MailingExtension extends CompilerExtension
@@ -41,11 +41,11 @@ class MailingExtension extends CompilerExtension
 
 		$builder->addDefinition($this->prefix('sender'))
 			->setType(IMailSender::class)
-			->setFactory(MailSender::class);
+			->setFactory(NetteMailSender::class);
 
 		$templateFactory = $builder->addDefinition($this->prefix('templateFactory'))
 			->setType(IMailTemplateFactory::class)
-			->setFactory(MailTemplateFactory::class);
+			->setFactory(NetteTemplateFactory::class);
 
 		if ($config['template']['defaults']) {
 			$templateFactory->addSetup('setDefaults', [$config['template']['defaults']]);

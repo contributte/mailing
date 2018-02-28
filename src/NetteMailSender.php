@@ -4,7 +4,7 @@ namespace Contributte\Mailing;
 
 use Nette\Mail\IMailer;
 
-class MailSender implements IMailSender
+class NetteMailSender implements IMailSender
 {
 
 	/** @var IMailer */

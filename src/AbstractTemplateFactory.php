@@ -3,39 +3,21 @@
 namespace Contributte\Mailing;
 
 use Contributte\Mailing\Exception\Logical\TemplateException;
-use Nette\Application\LinkGenerator;
-use Nette\Application\UI\ITemplateFactory;
 use Nette\Bridges\ApplicationLatte\Template;
 use Nette\Utils\Strings;
 
-class MailTemplateFactory implements IMailTemplateFactory
+abstract class AbstractTemplateFactory implements IMailTemplateFactory
 {
 
-	/** @var ITemplateFactory */
-	private $templateFactory;
-
-	/** @var LinkGenerator */
-	private $linkGenerator;
-
 	/** @var array */
-	private $defaults = [
+	protected $defaults = [
 		'layout' => '@default',
 	];
 
 	/** @var array */
-	private $config = [
+	protected $config = [
 		'layout' => '@default',
 	];
-
-	/**
-	 * @param ITemplateFactory $templateFactory
-	 * @param LinkGenerator $linkGenerator
-	 */
-	public function __construct(ITemplateFactory $templateFactory, LinkGenerator $linkGenerator)
-	{
-		$this->templateFactory = $templateFactory;
-		$this->linkGenerator = $linkGenerator;
-	}
 
 	/**
 	 * GETTERS/SETTERS *********************************************************
@@ -77,27 +59,6 @@ class MailTemplateFactory implements IMailTemplateFactory
 	public function setConfigItem($key, $value)
 	{
 		$this->config[$key] = $value;
-	}
-
-	/**
-	 * API *********************************************************************
-	 */
-
-	/**
-	 * @return Template
-	 */
-	public function create()
-	{
-		/** @var Template $template */
-		$template = $this->templateFactory->createTemplate();
-
-		// For macros {link} {plink}
-		$template->getLatte()->addProvider('uiControl', $this->linkGenerator);
-
-		// Prepare template
-		$template = $this->prepare($template);
-
-		return $template;
 	}
 
 	/**
