@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Contributte\Mailing;
 
@@ -10,19 +10,12 @@ class NetteMailSender implements IMailSender
 	/** @var IMailer */
 	private $mailer;
 
-	/**
-	 * @param IMailer $mailer
-	 */
 	public function __construct(IMailer $mailer)
 	{
 		$this->mailer = $mailer;
 	}
 
-	/**
-	 * @param MailBuilder $builder
-	 * @return void
-	 */
-	public function send(MailBuilder $builder)
+	public function send(MailBuilder $builder): void
 	{
 		// Create message
 		$message = $builder->getMessage();

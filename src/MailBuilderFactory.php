@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Contributte\Mailing;
 
@@ -11,20 +11,13 @@ class MailBuilderFactory implements IMailBuilderFactory
 	/** @var IMailTemplateFactory */
 	protected $templateFactory;
 
-	/**
-	 * @param IMailSender $sender
-	 * @param IMailTemplateFactory $templateFactory
-	 */
 	public function __construct(IMailSender $sender, IMailTemplateFactory $templateFactory)
 	{
 		$this->sender = $sender;
 		$this->templateFactory = $templateFactory;
 	}
 
-	/**
-	 * @return MailBuilder
-	 */
-	public function create()
+	public function create(): MailBuilder
 	{
 		$mail = new MailBuilder($this->sender);
 		$mail->setTemplate($this->templateFactory->create());

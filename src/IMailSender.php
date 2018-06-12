@@ -1,14 +1,10 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Contributte\Mailing;
 
 interface IMailSender
 {
 
-	/**
-	 * @param MailBuilder $builder
-	 * @return void
-	 */
-	public function send(MailBuilder $builder);
+	public function send(MailBuilder $builder): void;
 
 }

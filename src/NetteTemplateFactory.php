@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Contributte\Mailing;
 
@@ -15,24 +15,13 @@ class NetteTemplateFactory extends AbstractTemplateFactory
 	/** @var LinkGenerator */
 	private $linkGenerator;
 
-	/**
-	 * @param ITemplateFactory $templateFactory
-	 * @param LinkGenerator $linkGenerator
-	 */
 	public function __construct(ITemplateFactory $templateFactory, LinkGenerator $linkGenerator)
 	{
 		$this->templateFactory = $templateFactory;
 		$this->linkGenerator = $linkGenerator;
 	}
 
-	/**
-	 * API *********************************************************************
-	 */
-
-	/**
-	 * @return Template
-	 */
-	public function create()
+	public function create(): Template
 	{
 		/** @var Template $template */
 		$template = $this->templateFactory->createTemplate();
