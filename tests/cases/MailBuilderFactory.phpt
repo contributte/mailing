@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Tests;
 
@@ -19,14 +19,14 @@ use Tester\Assert;
 
 require_once __DIR__ . '/../bootstrap.php';
 
-test(function () {
+test(function (): void {
 	$linkGenerator = Mockery::mock(LinkGenerator::class);
 
 	$sender = Mockery::mock(IMailSender::class);
 	$sender->shouldReceive('send')
 		->once()
-		->andReturnUsing(function (MailBuilder $builder) {
-			Assert::equal(['foo@bar.baz' => NULL], $builder->getMessage()->getFrom());
+		->andReturnUsing(function (MailBuilder $builder): void {
+			Assert::equal(['foo@bar.baz' => null], $builder->getMessage()->getFrom());
 
 			$message = $builder->getMessage();
 			$template = $builder->getTemplate();

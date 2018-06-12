@@ -6,13 +6,11 @@
 
 [![Build Status](https://img.shields.io/travis/contributte/mailing.svg?style=flat-square)](https://travis-ci.org/contributte/mailing)
 [![Code coverage](https://img.shields.io/coveralls/contributte/mailing.svg?style=flat-square)](https://coveralls.io/r/contributte/mailing)
-[![HHVM Status](https://img.shields.io/hhvm/contributte/mailing.svg?style=flat-square)](http://hhvm.h4cc.de/package/contributte/mailing)
 [![Licence](https://img.shields.io/packagist/l/contributte/mailing.svg?style=flat-square)](https://packagist.org/packages/contributte/mailing)
 
 [![Downloads this Month](https://img.shields.io/packagist/dm/contributte/mailing.svg?style=flat-square)](https://packagist.org/packages/contributte/mailing)
 [![Downloads total](https://img.shields.io/packagist/dt/contributte/mailing.svg?style=flat-square)](https://packagist.org/packages/contributte/mailing)
 [![Latest stable](https://img.shields.io/packagist/v/contributte/mailing.svg?style=flat-square)](https://packagist.org/packages/contributte/mailing)
-[![Latest unstable](https://img.shields.io/packagist/vpre/contributte/mailing.svg?style=flat-square)](https://packagist.org/packages/contributte/mailing)
 
 ## Discussion / Help
 
@@ -26,10 +24,11 @@ composer require contributte/mailing
 
 ## Versions
 
-| State       | Version     | Branch   | PHP      |
-|-------------|-------------|----------|----------|
-| development | dev-master  | `master` | `>= 5.6` |
-| stable      | `^0.1`      | `master` | `>= 5.6` |
+| State       | Version | Branch   | PHP      |
+|-------------|---------|----------|----------|
+| dev         | `^0.3`  | `master` | `>= 7.1` |
+| stable      | `^0.2`  | `master` | `>= 7.1` |
+| stable      | `^0.1`  | `master` | `>= 5.6` |
 
 ## Overview
 
@@ -48,6 +47,15 @@ composer require contributte/mailing
         </a>
         </br>
         <a href="https://github.com/f3l1x">Milan Felix Šulc</a>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <a href="https://github.com/mabar">
+            <img width="150" height="150" src="https://avatars0.githubusercontent.com/u/20974277?s=400&v=4">
+        </a>
+        </br>
+        <a href="https://github.com/mabar">Marek Bartoš</a>
       </td>
     </tr>
   <tbody>

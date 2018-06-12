@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Contributte\Mailing;
 
@@ -7,9 +7,6 @@ use Nette\Bridges\ApplicationLatte\Template;
 interface IMailTemplateFactory
 {
 
-	/**
-	 * @return Template
-	 */
-	public function create();
+	public function create(): Template;
 
 }

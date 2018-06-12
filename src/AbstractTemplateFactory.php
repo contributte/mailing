@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Contributte\Mailing;
 
@@ -9,25 +9,20 @@ use Nette\Utils\Strings;
 abstract class AbstractTemplateFactory implements IMailTemplateFactory
 {
 
-	/** @var array */
+	/** @var mixed[] */
 	protected $defaults = [
 		'layout' => '@default',
 	];
 
-	/** @var array */
+	/** @var mixed[] */
 	protected $config = [
 		'layout' => '@default',
 	];
 
 	/**
-	 * GETTERS/SETTERS *********************************************************
+	 * @param mixed[] $defaults
 	 */
-
-	/**
-	 * @param array $defaults
-	 * @return void
-	 */
-	public function setDefaults(array $defaults)
+	public function setDefaults(array $defaults): void
 	{
 		$this->defaults = $defaults;
 	}
@@ -35,18 +30,16 @@ abstract class AbstractTemplateFactory implements IMailTemplateFactory
 	/**
 	 * @param mixed $key
 	 * @param mixed $value
-	 * @return void
 	 */
-	public function setDefaultsItem($key, $value)
+	public function setDefaultsItem($key, $value): void
 	{
 		$this->defaults[$key] = $value;
 	}
 
 	/**
-	 * @param array $config
-	 * @return void
+	 * @param mixed[] $config
 	 */
-	public function setConfig(array $config)
+	public function setConfig(array $config): void
 	{
 		$this->config = $config;
 	}
@@ -54,22 +47,13 @@ abstract class AbstractTemplateFactory implements IMailTemplateFactory
 	/**
 	 * @param mixed $key
 	 * @param mixed $value
-	 * @return void
 	 */
-	public function setConfigItem($key, $value)
+	public function setConfigItem($key, $value): void
 	{
 		$this->config[$key] = $value;
 	}
 
-	/**
-	 * HELPERS *****************************************************************
-	 */
-
-	/**
-	 * @param Template $template
-	 * @return Template
-	 */
-	protected function prepare(Template $template)
+	protected function prepare(Template $template): Template
 	{
 		$template = $this->prepareDefaults($template);
 		$template = $this->prepareConfig($template);
@@ -77,14 +61,10 @@ abstract class AbstractTemplateFactory implements IMailTemplateFactory
 		return $template;
 	}
 
-	/**
-	 * @param Template $template
-	 * @return Template
-	 */
-	protected function prepareDefaults(Template $template)
+	protected function prepareDefaults(Template $template): Template
 	{
 		// Layout
-		if ($this->defaults['layout']) {
+		if (isset($this->defaults['layout'])) {
 			$this->defaults['layout'] = $this->prepareLayout($this->defaults['layout']);
 		}
 
@@ -94,14 +74,10 @@ abstract class AbstractTemplateFactory implements IMailTemplateFactory
 		return $template;
 	}
 
-	/**
-	 * @param Template $template
-	 * @return Template
-	 */
-	protected function prepareConfig(Template $template)
+	protected function prepareConfig(Template $template): Template
 	{
 		// Layout
-		if ($this->config['layout']) {
+		if (isset($this->config['layout'])) {
 			$this->config['layout'] = $this->prepareLayout($this->config['layout']);
 		}
 
@@ -111,11 +87,7 @@ abstract class AbstractTemplateFactory implements IMailTemplateFactory
 		return $template;
 	}
 
-	/**
-	 * @param string $layout
-	 * @return string
-	 */
-	protected function prepareLayout($layout)
+	protected function prepareLayout(string $layout): string
 	{
 		if (Strings::startsWith($layout, '@')) {
 			$layout = __DIR__ . '/../resources/layouts/' . $layout;

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Contributte\Mailing\DI;
 
@@ -13,7 +13,7 @@ use Nette\DI\CompilerExtension;
 class MailingExtension extends CompilerExtension
 {
 
-	/** @var array */
+	/** @var mixed[] */
 	private $defaults = [
 		'template' => [
 			'defaults' => [
@@ -25,12 +25,7 @@ class MailingExtension extends CompilerExtension
 		],
 	];
 
-	/**
-	 * Register services
-	 *
-	 * @return void
-	 */
-	public function loadConfiguration()
+	public function loadConfiguration(): void
 	{
 		$builder = $this->getContainerBuilder();
 		$config = $this->validateConfig($this->defaults);
