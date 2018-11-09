@@ -15,7 +15,7 @@ class MailBuilder
 	/** @var Message */
 	protected $message;
 
-	/** @var Template */
+	/** @var Template|null */
 	protected $template;
 
 	public function __construct(IMailSender $mailer, ?Message $message = null)
