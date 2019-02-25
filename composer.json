@@ -21,7 +21,7 @@
     "nette/di": "~2.4.12",
     "nette/mail": "~2.4.5",
     "nette/utils": "~2.5.2",
-    "latte/latte": "~2.4.8"
+    "latte/latte": "~2.4.8 || ~2.5.1"
   },
   "require-dev": {
     "ninjify/qa": "^0.8.0",
