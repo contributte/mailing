@@ -13,14 +13,16 @@ use Contributte\Mailing\NetteTemplateFactory;
 use Latte\Engine;
 use Mockery;
 use Nette\Application\LinkGenerator;
+use Nette\Application\Routers\RouteList;
 use Nette\Bridges\ApplicationLatte\ILatteFactory;
 use Nette\Bridges\ApplicationLatte\TemplateFactory;
+use Nette\Http\UrlScript;
 use Tester\Assert;
 
 require_once __DIR__ . '/../bootstrap.php';
 
 test(function (): void {
-	$linkGenerator = Mockery::mock(LinkGenerator::class);
+	$linkGenerator = new LinkGenerator(new RouteList(), new UrlScript());
 
 	$sender = Mockery::mock(IMailSender::class);
 	$sender->shouldReceive('send')
@@ -31,7 +33,7 @@ test(function (): void {
 			$message = $builder->getMessage();
 			$template = $builder->getTemplate();
 			$template->add('_mail', $message);
-			$message->setHtmlBody($template);
+			$message->setHtmlBody($template->__toString());
 
 			$filename = TEMP_DIR . date('Y-m-d H-i-s') . microtime() . '.eml';
 			file_put_contents($filename, $message->generateMessage());
