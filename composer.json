@@ -16,12 +16,11 @@
     }
   ],
   "require": {
-    "php": ">= 7.1",
-    "nette/application": "~2.4.12",
-    "nette/di": "~2.4.12",
-    "nette/mail": "~2.4.5",
-    "nette/utils": "~2.5.2",
-    "latte/latte": "~2.4.8 || ~2.5.1"
+    "php": "^7.2",
+    "nette/application": "~3.0.0",
+    "nette/di": "~3.0.0",
+    "nette/mail": "~3.0.1",
+    "latte/latte": "~2.5.1"
   },
   "require-dev": {
     "mockery/mockery": "^0.9.9",
@@ -34,7 +33,7 @@
     "phpstan/phpstan-strict-rules": "^0.11"
   },
   "conflict": {
-    "nette/http": "<2.4.9"
+    "nette/di": "<3.0.0"
   },
   "autoload": {
     "psr-4": {
@@ -53,7 +52,7 @@
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "0.3.x-dev"
+      "dev-master": "0.4.x-dev"
     }
   }
 }
