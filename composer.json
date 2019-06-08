@@ -24,12 +24,13 @@
     "latte/latte": "~2.4.8 || ~2.5.1"
   },
   "require-dev": {
-    "ninjify/qa": "^0.8.0",
-    "ninjify/nunjuck": "^0.2.0",
     "mockery/mockery": "^0.9.9",
-    "phpstan/phpstan-shim": "^0.11",
+    "ninjify/nunjuck": "^0.2.0",
+    "ninjify/qa": "^0.8.0",
+    "phpstan/extension-installer": "^1.0",
     "phpstan/phpstan-deprecation-rules": "^0.11",
     "phpstan/phpstan-nette": "^0.11",
+    "phpstan/phpstan-shim": "^0.11",
     "phpstan/phpstan-strict-rules": "^0.11"
   },
   "conflict": {
@@ -45,23 +46,11 @@
       "Tests\\Contributte\\Mailing\\": "tests/"
     }
   },
-  "scripts": {
-    "qa": [
-      "linter src tests",
-      "codesniffer src tests"
-    ],
-    "tests": [
-      "tester -s -p php --colors 1 -C tests/cases"
-    ],
-    "coverage": [
-      "tester -s -p phpdbg --colors 1 -C --coverage ./coverage.xml --coverage-src ./src tests/cases"
-    ],
-    "phpstan": [
-      "vendor/bin/phpstan analyse -l max -c phpstan.neon src"
-    ]
-  },
   "minimum-stability": "dev",
   "prefer-stable": true,
+  "config": {
+    "sort-packages": true
+  },
   "extra": {
     "branch-alias": {
       "dev-master": "0.3.x-dev"
