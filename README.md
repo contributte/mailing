@@ -1,8 +1,6 @@
-# Contributte > Mailing
+# Contributte Mailing
 
-:mailbox_with_mail: Sending emails with pleasure and prepared templates.
-
------
+Sending emails with pleasure and prepared templates.
 
 [![Build Status](https://img.shields.io/travis/contributte/mailing.svg?style=flat-square)](https://travis-ci.org/contributte/mailing)
 [![Code coverage](https://img.shields.io/coveralls/contributte/mailing.svg?style=flat-square)](https://coveralls.io/r/contributte/mailing)
@@ -16,11 +14,11 @@
 
 [![Join the chat](https://img.shields.io/gitter/room/contributte/contributte.svg?style=flat-square)](http://bit.ly/ctteg)
 
-## Install
+## Documentation
 
-```
-composer require contributte/mailing
-```
+- [Setup](.docs/README.md#setup)
+- [Configuration - layouts, templates, options](.docs/README.md#configuration)
+- [Usage - building & sending](.docs/README.md#usage)
 
 ## Versions
 
@@ -29,12 +27,6 @@ composer require contributte/mailing
 | dev         | `^0.3`  | `master` | `>= 7.1` |
 | stable      | `^0.2`  | `master` | `>= 7.1` |
 | stable      | `^0.1`  | `master` | `>= 5.6` |
-
-## Overview
-
-- [Installation - how to install](https://github.com/contributte/mailing/blob/master/.docs/#installation)
-- [Configuration - layouts, templates, options](https://github.com/contributte/mailing/blob/master/.docs/#configuration)
-- [Usage - building & sending](https://github.com/contributte/mailing/blob/master/.docs/#usage)
 
 ## Maintainers
 
@@ -58,7 +50,5 @@ composer require contributte/mailing
     </tr>
   </tbody>
 </table>
-
--------
 
 Thank you for testing, reporting and contributing.
