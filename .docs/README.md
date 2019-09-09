@@ -9,7 +9,6 @@
 ## Info
 
 The main goal of this package is send emails easily. It has 4 main classes, `MailBuilder`, `MailBuilderFactory`, `MailSender` and `MailTemplateFactory`.
-You can override each of them.
 
 ## Setup
 
