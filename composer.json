@@ -23,9 +23,9 @@
     "latte/latte": "~2.5.1"
   },
   "require-dev": {
-    "mockery/mockery": "^0.9.9",
-    "ninjify/nunjuck": "^0.2.0",
-    "ninjify/qa": "^0.8.0",
+    "mockery/mockery": "^1.2.4",
+    "ninjify/nunjuck": "^0.3.0",
+    "ninjify/qa": "^0.10.0",
     "phpstan/extension-installer": "^1.0",
     "phpstan/phpstan-deprecation-rules": "^0.11",
     "phpstan/phpstan-nette": "^0.11",
