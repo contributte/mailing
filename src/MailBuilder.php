@@ -18,6 +18,9 @@ class MailBuilder
 	/** @var Template|null */
 	protected $template;
 
+	/** @var string|null */
+	protected $plain;
+
 	public function __construct(IMailSender $mailer, ?Message $message = null)
 	{
 		$this->sender = $mailer;
@@ -49,6 +52,16 @@ class MailBuilder
 		$this->getTemplate()->setFile($file);
 
 		return $this;
+	}
+
+	public function getPlain(): ?string
+	{
+		return $this->plain;
+	}
+
+	public function setPlain(string $plain): void
+	{
+		$this->plain = $plain;
 	}
 
 	public function getMessage(): Message

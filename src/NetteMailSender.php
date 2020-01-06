@@ -27,6 +27,11 @@ class NetteMailSender implements IMailSender
 		// Set template to message
 		$message->setHtmlBody($template->__toString());
 
+		// Set plaintext to message (if any)
+		if ($builder->getPlain() !== null) {
+			$message->setBody($builder->getPlain());
+		}
+
 		// Send message
 		$this->mailer->send($message);
 	}
