@@ -24,7 +24,7 @@ Sending emails with pleasure and prepared templates.
 
 | State       | Version | Branch   | Nette | PHP     |
 |-------------|---------|----------|-------|---------|
-| dev         | `^0.5`  | `master` | 3.0+  | `^7.2`  |
+| dev         | `^0.5`  | `master` | 3.0+  | `>=7.2`  |
 | stable      | `^0.4`  | `master` | 3.0+  | `^7.2`  |
 | stable      | `^0.2`  | `master` | 2.4   | `>=7.1` |
 | stable      | `^0.1`  | `master` | 2.4   | `>=5.6` |
