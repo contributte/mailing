@@ -24,12 +24,12 @@ class MailBuilder
 	public function __construct(IMailSender $mailer, ?Message $message = null)
 	{
 		$this->sender = $mailer;
-		$this->message = $message ?: new Message();
+		$this->message = $message ?? new Message();
 	}
 
 	public function getTemplate(): Template
 	{
-		return $this->template ?: $this->template = new Template(new Engine());
+		return $this->template ?? $this->template = new Template(new Engine());
 	}
 
 	public function setTemplate(Template $template): void

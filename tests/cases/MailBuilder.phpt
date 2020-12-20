@@ -40,3 +40,12 @@ test(function (): void {
 
 	$builder->send();
 });
+
+test(function (): void {
+	$sender = Mockery::mock(IMailSender::class);
+	$builder = new MailBuilder($sender);
+	$t1 = $builder->getTemplate();
+	$t2 = $builder->getTemplate();
+
+	Assert::same($t1, $t2);
+});
