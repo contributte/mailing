@@ -1,48 +1,52 @@
-# Contributte Mailing
+![](https://heatbadger.now.sh/github/readme/contributte/console/)
 
-Sending emails with pleasure and prepared templates.
+<p align=center>
+  <a href="https://github.com/contributte/console/actions"><img src="https://badgen.net/github/checks/contributte/console/master?cache=300"></a>
+  <a href="https://coveralls.io/r/contributte/console"><img src="https://badgen.net/coveralls/c/github/contributte/console?cache=300"></a>
+  <a href="https://packagist.org/packages/contributte/console"><img src="https://badgen.net/packagist/dm/contributte/console"></a>
+  <a href="https://packagist.org/packages/contributte/console"><img src="https://badgen.net/packagist/v/contributte/console"></a>
+</p>
+<p align=center>
+  <a href="https://packagist.org/packages/contributte/console"><img src="https://badgen.net/packagist/php/contributte/console"></a>
+  <a href="https://github.com/contributte/console"><img src="https://badgen.net/github/license/contributte/console"></a>
+  <a href="https://bit.ly/ctteg"><img src="https://badgen.net/badge/support/gitter/cyan"></a>
+  <a href="https://bit.ly/cttfo"><img src="https://badgen.net/badge/support/forum/yellow"></a>
+  <a href="https://contributte.org/partners.html"><img src="https://badgen.net/badge/sponsor/donations/F96854"></a>
+</p>
 
-[![Build Status](https://img.shields.io/travis/contributte/mailing.svg?style=flat-square)](https://travis-ci.org/contributte/mailing)
-[![Code coverage](https://img.shields.io/coveralls/contributte/mailing.svg?style=flat-square)](https://coveralls.io/r/contributte/mailing)
-[![Licence](https://img.shields.io/packagist/l/contributte/mailing.svg?style=flat-square)](https://packagist.org/packages/contributte/mailing)
-[![Downloads this Month](https://img.shields.io/packagist/dm/contributte/mailing.svg?style=flat-square)](https://packagist.org/packages/contributte/mailing)
-[![Downloads total](https://img.shields.io/packagist/dt/contributte/mailing.svg?style=flat-square)](https://packagist.org/packages/contributte/mailing)
-[![Latest stable](https://img.shields.io/packagist/v/contributte/mailing.svg?style=flat-square)](https://packagist.org/packages/contributte/mailing)
-[![PHPStan](https://img.shields.io/badge/PHPStan-enabled-brightgreen.svg?style=flat-square)](https://github.com/phpstan/phpstan)
+<p align=center>
+Website 🚀 <a href="https://contributte.org">contributte.org</a> | Contact 👨🏻‍💻 <a href="https://f3l1x.io">f3l1x.io</a> | Twitter 🐦 <a href="https://twitter.com/contributte">@contributte</a>
+</p>
 
-## Discussion / Help
+## Usage
 
-[![Join the chat](https://img.shields.io/gitter/room/contributte/contributte.svg?style=flat-square)](http://bit.ly/ctteg)
+To install latest version of `contributte/console` use [Composer](https://getcomposer.com).
+
+```
+composer install contributte/console
+```
 
 ## Documentation
 
-- [Setup](.docs/README.md#setup)
-- [Configuration - layouts, templates, options](.docs/README.md#configuration)
-- [Usage - building & sending](.docs/README.md#usage)
+For details on how to use this package, check out our [documentation](.docs).
 
 ## Versions
 
 | State       | Version | Branch   | Nette | PHP     |
 |-------------|---------|----------|-------|---------|
-| dev         | `^0.5`  | `master` | 3.0+  | `>=7.2`  |
-| stable      | `^0.4`  | `master` | 3.0+  | `^7.2`  |
+| dev         | `^0.6`  | `master` | 3.0+  | `>=7.2` |
+| stable      | `^0.5`  | `master` | 3.0+  | `>=7.2` |
 | stable      | `^0.2`  | `master` | 2.4   | `>=7.1` |
-| stable      | `^0.1`  | `master` | 2.4   | `>=5.6` |
 
-## Maintainers
+## Development
 
-<table>
-  <tbody>
-    <tr>
-      <td align="center">
-        <a href="https://github.com/f3l1x">
-            <img width="150" height="150" src="https://avatars2.githubusercontent.com/u/538058?v=3&s=150">
-        </a>
-        </br>
-        <a href="https://github.com/f3l1x">Milan Felix Šulc</a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+See [how to contribute](https://contributte.org) to this package. This package is currently maintained by these authors.
 
-Thank you for testing, reporting and contributing.
+<a href="https://github.com/f3l1x">
+    <img width="80" height="80" src="https://avatars2.githubusercontent.com/u/538058?v=3&s=80">
+</a>
+
+-----
+
+Consider to [support](https://contributte.com/partners) **contributte** development team.
+Also thank you for using this package.
