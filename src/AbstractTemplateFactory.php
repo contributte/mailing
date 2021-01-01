@@ -3,6 +3,7 @@
 namespace Contributte\Mailing;
 
 use Contributte\Mailing\Exception\Logical\TemplateException;
+use Contributte\Mailing\Utils\Templater;
 use Nette\Bridges\ApplicationLatte\Template;
 use Nette\Utils\Strings;
 
@@ -69,7 +70,7 @@ abstract class AbstractTemplateFactory implements IMailTemplateFactory
 		}
 
 		// Append defaults to template
-		$template->add('_defaults', (object) $this->defaults);
+		Templater::addParameter($template, '_defaults', (object) $this->defaults);
 
 		return $template;
 	}
@@ -82,7 +83,7 @@ abstract class AbstractTemplateFactory implements IMailTemplateFactory
 		}
 
 		// Append defaults to template
-		$template->add('_config', (object) $this->config);
+		Templater::addParameter($template, '_config', (object) $this->config);
 
 		return $template;
 	}

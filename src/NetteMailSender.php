@@ -2,15 +2,16 @@
 
 namespace Contributte\Mailing;
 
-use Nette\Mail\IMailer;
+use Contributte\Mailing\Utils\Templater;
+use Nette\Mail\Mailer;
 
 class NetteMailSender implements IMailSender
 {
 
-	/** @var IMailer */
+	/** @var Mailer */
 	private $mailer;
 
-	public function __construct(IMailer $mailer)
+	public function __construct(Mailer $mailer)
 	{
 		$this->mailer = $mailer;
 	}
@@ -22,18 +23,12 @@ class NetteMailSender implements IMailSender
 
 		// Create template
 		$template = $builder->getTemplate();
-		$template->add('_mail', $message);
-
-		// Set folder for embedded images
-		$imageFolder = null;
-		if (is_string($template->getFile())) {
-			$imageFolder = dirname($template->getFile());
-		}
+		Templater::addParameter($template, '_mail', $message);
 
 		// Set template to message
 		$message->setHtmlBody(
-			$template->renderToString($template->getFile(), $template->getParameters()),
-			$imageFolder
+			$template->__toString(),
+			is_string($template->getFile()) ? dirname($template->getFile()) : null
 		);
 
 		// Set plaintext to message (if any)
