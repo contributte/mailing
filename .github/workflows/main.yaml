@@ -195,9 +195,6 @@ jobs:
       - name: "Install dependencies"
         run: "${{ env.composer-install }} ${{ matrix.composer-args }}"
 
-      - name: "Setup problem matchers for PHPUnit"
-        run: 'echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"'
-
       - name: "Tests"
         run: "make tests"
 
