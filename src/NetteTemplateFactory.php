@@ -3,19 +3,19 @@
 namespace Contributte\Mailing;
 
 use Nette\Application\LinkGenerator;
-use Nette\Application\UI\ITemplateFactory;
+use Nette\Application\UI\TemplateFactory;
 use Nette\Bridges\ApplicationLatte\Template;
 
 class NetteTemplateFactory extends AbstractTemplateFactory
 {
 
-	/** @var ITemplateFactory */
+	/** @var TemplateFactory */
 	private $templateFactory;
 
 	/** @var LinkGenerator */
 	private $linkGenerator;
 
-	public function __construct(ITemplateFactory $templateFactory, LinkGenerator $linkGenerator)
+	public function __construct(TemplateFactory $templateFactory, LinkGenerator $linkGenerator)
 	{
 		$this->templateFactory = $templateFactory;
 		$this->linkGenerator = $linkGenerator;
