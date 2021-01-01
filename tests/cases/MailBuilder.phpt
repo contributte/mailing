@@ -103,5 +103,5 @@ Toolkit::test(function (): void {
 
 	Assert::exception(function () use ($builder): void {
 		$builder->send();
-	}, IOException::class, 'Unable to read file %a%. Failed to open stream: No such file or directory');
+	}, IOException::class, 'Unable to read file %a%. %a% to open stream: No such file or directory');
 });
