@@ -1,14 +1,14 @@
-![](https://heatbadger.now.sh/github/readme/contributte/console/)
+![](https://heatbadger.now.sh/github/readme/contributte/mailing/)
 
 <p align=center>
-  <a href="https://github.com/contributte/console/actions"><img src="https://badgen.net/github/checks/contributte/console/master?cache=300"></a>
-  <a href="https://coveralls.io/r/contributte/console"><img src="https://badgen.net/coveralls/c/github/contributte/console?cache=300"></a>
-  <a href="https://packagist.org/packages/contributte/console"><img src="https://badgen.net/packagist/dm/contributte/console"></a>
-  <a href="https://packagist.org/packages/contributte/console"><img src="https://badgen.net/packagist/v/contributte/console"></a>
+  <a href="https://github.com/contributte/mailing/actions"><img src="https://badgen.net/github/checks/contributte/mailing/master?cache=300"></a>
+  <a href="https://coveralls.io/r/contributte/mailing"><img src="https://badgen.net/coveralls/c/github/contributte/mailing?cache=300"></a>
+  <a href="https://packagist.org/packages/contributte/mailing"><img src="https://badgen.net/packagist/dm/contributte/mailing"></a>
+  <a href="https://packagist.org/packages/contributte/mailing"><img src="https://badgen.net/packagist/v/contributte/mailing"></a>
 </p>
 <p align=center>
-  <a href="https://packagist.org/packages/contributte/console"><img src="https://badgen.net/packagist/php/contributte/console"></a>
-  <a href="https://github.com/contributte/console"><img src="https://badgen.net/github/license/contributte/console"></a>
+  <a href="https://packagist.org/packages/contributte/mailing"><img src="https://badgen.net/packagist/php/contributte/mailing"></a>
+  <a href="https://github.com/contributte/mailing"><img src="https://badgen.net/github/license/contributte/mailing"></a>
   <a href="https://bit.ly/ctteg"><img src="https://badgen.net/badge/support/gitter/cyan"></a>
   <a href="https://bit.ly/cttfo"><img src="https://badgen.net/badge/support/forum/yellow"></a>
   <a href="https://contributte.org/partners.html"><img src="https://badgen.net/badge/sponsor/donations/F96854"></a>
@@ -20,10 +20,10 @@ Website ðŸš€ <a href="https://contributte.org">contributte.org</a> | Contact ðŸ‘
 
 ## Usage
 
-To install latest version of `contributte/console` use [Composer](https://getcomposer.com).
+To install latest version of `contributte/mailing` use [Composer](https://getcomposer.com).
 
 ```
-composer install contributte/console
+composer require contributte/mailing
 ```
 
 ## Documentation
