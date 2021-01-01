@@ -52,7 +52,7 @@ jobs:
         with:
           php-version: "${{ matrix.php-version }}"
           extensions: "${{ env.extensions }}"
-          tools: "composer:${{ env.composer-version }}"
+          tools: "composer:${{ env.composer-version }}, cs2pr"
           coverage: "${{ env.coverage }}"
 
       - name: "Setup problem matchers for PHP"
@@ -202,6 +202,13 @@ jobs:
       - name: "Tests"
         run: "make tests"
 
+      - name: "Upload test output"
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: output
+          path: tests/**/output
+
   tests-code-coverage:
     name: "Tests with code coverage"
     runs-on: "${{ matrix.operating-system }}"
@@ -260,6 +267,13 @@ jobs:
 
       - name: "Tests"
         run: "make coverage-clover"
+
+      - name: "Upload test output"
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: output
+          path: tests/**/output
 
       - name: "Coveralls.io"
         env:
