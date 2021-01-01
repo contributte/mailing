@@ -2,6 +2,7 @@
 
 namespace Contributte\Mailing;
 
+use Contributte\Mailing\Utils\Templater;
 use Latte\Engine;
 use Nette\Bridges\ApplicationLatte\Template;
 use Nette\Mail\Message;
@@ -15,7 +16,7 @@ class MailBuilder
 	/** @var Message */
 	protected $message;
 
-	/** @var Template|null */
+	/** @var Template */
 	protected $template;
 
 	/** @var string|null */
@@ -25,11 +26,12 @@ class MailBuilder
 	{
 		$this->sender = $mailer;
 		$this->message = $message ?? new Message();
+		$this->template = new Template(new Engine());
 	}
 
 	public function getTemplate(): Template
 	{
-		return $this->template ?? $this->template = new Template(new Engine());
+		return $this->template;
 	}
 
 	public function setTemplate(Template $template): void
@@ -42,7 +44,7 @@ class MailBuilder
 	 */
 	public function setParameters(array $parameters): self
 	{
-		$this->getTemplate()->setParameters($parameters);
+		Templater::setParameters($this->template, $parameters);
 
 		return $this;
 	}
