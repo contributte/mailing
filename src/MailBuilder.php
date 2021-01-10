@@ -92,6 +92,13 @@ class MailBuilder
 		return $this;
 	}
 
+	public function addReplyTo(string $email, ?string $name = null): self
+	{
+		$this->message->addReplyTo($email, $name);
+
+		return $this;
+	}
+
 	public function setSubject(string $subject): self
 	{
 		$this->message->setSubject($subject);
