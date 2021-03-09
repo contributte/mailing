@@ -31,7 +31,7 @@ mailing:
         defaults:
             layout: @@default
         config:
-            layout: @@default 
+            layout: @@default
 ```
 
 Templating and template options are under key **template**. At this moment, there's a default theme (https://github.com/leemunroe/responsive-html-email-template/), simple but good looking.
@@ -40,7 +40,7 @@ This default default layout is located in this package, you don't need to change
 - The `defaults` should be untouched and it can be considered as base class. Your theme will be extending the default one.
 - The `config` can be considered as child class, define your own theme.
 
-Typical configuration would be override the default theme with some extra features. 
+Typical configuration would be override the default theme with some extra features.
 
 ```yaml
 template:
@@ -94,7 +94,7 @@ Each template has many internal variables:
 - `$_config` - refer custom configuration
 - `$_mail` - refer mail configuration (can overrides subject, from, bcc, etc..)
 
-```smarty
+```latte
 {layout $_config->layout}
 
 {block #header}
