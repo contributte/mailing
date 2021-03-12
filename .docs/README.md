@@ -16,22 +16,22 @@ The main goal of this package is send emails easily. It has 4 main classes, `Mai
 composer require contributte/mailing
 ```
 
-```yaml
+```neon
 extensions:
-    mailing: Contributte\Mailing\DI\MailingExtension
+	mailing: Contributte\Mailing\DI\MailingExtension
 ```
 
 ## Configuration
 
 Default configuration looks like this.
 
-```yaml
+```neon
 mailing:
-    template:
-        defaults:
-            layout: @@default
-        config:
-            layout: @@default 
+	template:
+		defaults:
+			layout: @@default
+		config:
+			layout: @@default
 ```
 
 Templating and template options are under key **template**. At this moment, there's a default theme (https://github.com/leemunroe/responsive-html-email-template/), simple but good looking.
@@ -40,14 +40,14 @@ This default default layout is located in this package, you don't need to change
 - The `defaults` should be untouched and it can be considered as base class. Your theme will be extending the default one.
 - The `config` can be considered as child class, define your own theme.
 
-Typical configuration would be override the default theme with some extra features. 
+Typical configuration would be override the default theme with some extra features.
 
-```yaml
+```neon
 template:
-    defaults:
-        layout: @@default
-    config:
-        layout: @@mylayout
+	defaults:
+		layout: @@default
+	config:
+		layout: @@mylayout
 ```
 
 > There are double `@` because of NEON resolving.
@@ -76,7 +76,7 @@ $mail->addCcs($user->email);
 // Template
 $mail->setTemplateFile(__DIR__ . '/../../resources/awesome.latte');
 $mail->setParameters([
-    'username' => $user->logname,
+	'username' => $user->logname,
 ]);
 
 // Sending
@@ -94,7 +94,7 @@ Each template has many internal variables:
 - `$_config` - refer custom configuration
 - `$_mail` - refer mail configuration (can overrides subject, from, bcc, etc..)
 
-```smarty
+```latte
 {layout $_config->layout}
 
 {block #header}
@@ -107,4 +107,3 @@ Each template has many internal variables:
 ```
 
 Each template has many blocks, take a look to source.
-
