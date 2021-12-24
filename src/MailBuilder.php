@@ -22,6 +22,9 @@ class MailBuilder
 	/** @var string|null */
 	protected $plain;
 
+	/** @var string|null */
+	protected $imagePath;
+
 	public function __construct(IMailSender $mailer, ?Message $message = null)
 	{
 		$this->sender = $mailer;
@@ -54,6 +57,16 @@ class MailBuilder
 		$this->getTemplate()->setFile($file);
 
 		return $this;
+	}
+
+	public function getImagePath(): ?string
+	{
+		return $this->imagePath;
+	}
+
+	public function setImagePath(string $imagePath): void
+	{
+		$this->imagePath = $imagePath;
 	}
 
 	public function getPlain(): ?string

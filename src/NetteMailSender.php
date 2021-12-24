@@ -28,7 +28,7 @@ class NetteMailSender implements IMailSender
 		// Set template to message
 		$message->setHtmlBody(
 			$template->__toString(),
-			is_string($template->getFile()) ? dirname($template->getFile()) : null
+			$builder->getImagePath() ?? (is_string($template->getFile()) ? dirname($template->getFile()) : null)
 		);
 
 		// Set plaintext to message (if any)
