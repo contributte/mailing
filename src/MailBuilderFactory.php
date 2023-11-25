@@ -5,11 +5,9 @@ namespace Contributte\Mailing;
 class MailBuilderFactory implements IMailBuilderFactory
 {
 
-	/** @var IMailSender */
-	protected $sender;
+	protected IMailSender $sender;
 
-	/** @var IMailTemplateFactory */
-	protected $templateFactory;
+	protected IMailTemplateFactory $templateFactory;
 
 	public function __construct(IMailSender $sender, IMailTemplateFactory $templateFactory)
 	{

@@ -9,11 +9,9 @@ use Nette\Bridges\ApplicationLatte\Template;
 class NetteTemplateFactory extends AbstractTemplateFactory
 {
 
-	/** @var TemplateFactory */
-	private $templateFactory;
+	private TemplateFactory $templateFactory;
 
-	/** @var LinkGenerator */
-	private $linkGenerator;
+	private LinkGenerator $linkGenerator;
 
 	public function __construct(TemplateFactory $templateFactory, LinkGenerator $linkGenerator)
 	{

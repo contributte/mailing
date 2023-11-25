@@ -10,20 +10,15 @@ use Nette\Mail\Message;
 class MailBuilder
 {
 
-	/** @var IMailSender */
-	protected $sender;
+	protected IMailSender $sender;
 
-	/** @var Message */
-	protected $message;
+	protected Message $message;
 
-	/** @var Template */
-	protected $template;
+	protected Template $template;
 
-	/** @var string|null */
-	protected $plain;
+	protected ?string $plain = null;
 
-	/** @var string|null */
-	protected $imagePath;
+	protected ?string $imagePath = null;
 
 	public function __construct(IMailSender $mailer, ?Message $message = null)
 	{

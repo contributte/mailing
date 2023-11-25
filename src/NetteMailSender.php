@@ -8,8 +8,7 @@ use Nette\Mail\Mailer;
 class NetteMailSender implements IMailSender
 {
 
-	/** @var Mailer */
-	private $mailer;
+	private Mailer $mailer;
 
 	public function __construct(Mailer $mailer)
 	{

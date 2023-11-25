@@ -31,9 +31,7 @@ Toolkit::test(function (): void {
 	$mailer = Mockery::mock(Mailer::class);
 	$mailer->shouldReceive('send')
 		->once()
-		->withArgs(function (Message $message): bool {
-			return $message->getBody() === 'Plain text';
-		});
+		->withArgs(fn (Message $message): bool => $message->getBody() === 'Plain text');
 
 	$sender = new NetteMailSender($mailer);
 	$builder = new MailBuilder($sender);
@@ -58,9 +56,7 @@ Toolkit::test(function (): void {
 	$mailer = Mockery::mock(Mailer::class);
 	$mailer->shouldReceive('send')
 		->once()
-		->withArgs(function (Message $message): bool {
-			return Strings::contains($message->getHtmlBody(), '<img src="https://github.com/f3l1x.png">');
-		});
+		->withArgs(fn (Message $message): bool => Strings::contains($message->getHtmlBody(), '<img src="https://github.com/f3l1x.png">'));
 
 	$sender = new NetteMailSender($mailer);
 	$builder = new MailBuilder($sender);
@@ -75,9 +71,7 @@ Toolkit::test(function (): void {
 	$mailer = Mockery::mock(Mailer::class);
 	$mailer->shouldReceive('send')
 		->once()
-		->withArgs(function (Message $message): bool {
-			return Assert::isMatching('<img src="%a%">', $message->getHtmlBody());
-		});
+		->withArgs(fn (Message $message): bool => Assert::isMatching('<img src="%a%">', $message->getHtmlBody()));
 
 	$sender = new NetteMailSender($mailer);
 	$builder = new MailBuilder($sender);
@@ -92,9 +86,7 @@ Toolkit::test(function (): void {
 	$mailer = Mockery::mock(Mailer::class);
 	$mailer->shouldReceive('send')
 		->once()
-		->withArgs(function (Message $message): bool {
-			return $message->getHtmlBody() === '1';
-		});
+		->withArgs(fn (Message $message): bool => $message->getHtmlBody() === '1');
 
 	$sender = new NetteMailSender($mailer);
 	$builder = new MailBuilder($sender);
