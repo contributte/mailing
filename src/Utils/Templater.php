@@ -15,7 +15,7 @@ class Templater
 			throw new RuntimeException(sprintf('The variable "%s" already exists.', $name));
 		}
 
-		$template->$name = $value;
+		@$template->$name = $value;
 
 		return $template;
 	}
