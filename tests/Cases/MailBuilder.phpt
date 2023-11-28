@@ -2,19 +2,15 @@
 
 namespace Tests;
 
-/**
- * Test: MailBuilder
- */
-
 use Contributte\Mailing\IMailSender;
 use Contributte\Mailing\MailBuilder;
 use Contributte\Mailing\NetteMailSender;
+use Contributte\Tester\Toolkit;
 use Mockery;
 use Nette\IOException;
 use Nette\Mail\Mailer;
 use Nette\Mail\Message;
 use Nette\Utils\Strings;
-use Ninjify\Nunjuck\Toolkit;
 use Tester\Assert;
 
 require_once __DIR__ . '/../bootstrap.php';
@@ -36,7 +32,7 @@ Toolkit::test(function (): void {
 	$sender = new NetteMailSender($mailer);
 	$builder = new MailBuilder($sender);
 	$builder->setFrom('foo@bar.baz');
-	$builder->setTemplateFile(__DIR__ . '/../fixtures/mails/empty.latte');
+	$builder->setTemplateFile(__DIR__ . '/../Fixtures/mails/empty.latte');
 	$builder->setPlain('Plain text');
 
 	$builder->send();
@@ -61,7 +57,7 @@ Toolkit::test(function (): void {
 	$sender = new NetteMailSender($mailer);
 	$builder = new MailBuilder($sender);
 	$builder->setFrom('foo@bar.baz');
-	$builder->setTemplateFile(__DIR__ . '/../fixtures/mails/img-absolute.latte');
+	$builder->setTemplateFile(__DIR__ . '/../Fixtures/mails/img-absolute.latte');
 
 	$builder->send();
 });
@@ -76,7 +72,7 @@ Toolkit::test(function (): void {
 	$sender = new NetteMailSender($mailer);
 	$builder = new MailBuilder($sender);
 	$builder->setFrom('foo@bar.baz');
-	$builder->setTemplateFile(__DIR__ . '/../fixtures/mails/img-relative.latte');
+	$builder->setTemplateFile(__DIR__ . '/../Fixtures/mails/img-relative.latte');
 
 	$builder->send();
 });
@@ -91,7 +87,7 @@ Toolkit::test(function (): void {
 	$sender = new NetteMailSender($mailer);
 	$builder = new MailBuilder($sender);
 	$builder->setFrom('foo@bar.baz');
-	$builder->setTemplateFile(__DIR__ . '/../fixtures/mails/img-notfound.latte');
+	$builder->setTemplateFile(__DIR__ . '/../Fixtures/mails/img-notfound.latte');
 
 	Assert::exception(function () use ($builder): void {
 		$builder->send();

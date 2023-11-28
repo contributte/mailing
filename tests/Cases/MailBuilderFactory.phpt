@@ -2,14 +2,12 @@
 
 namespace Tests;
 
-/**
- * Test: MailBuilderFactory
- */
-
 use Contributte\Mailing\IMailSender;
 use Contributte\Mailing\MailBuilder;
 use Contributte\Mailing\MailBuilderFactory;
 use Contributte\Mailing\NetteTemplateFactory;
+use Contributte\Tester\Environment;
+use Contributte\Tester\Toolkit;
 use Latte\Engine;
 use Mockery;
 use Nette\Application\LinkGenerator;
@@ -17,7 +15,6 @@ use Nette\Application\Routers\RouteList;
 use Nette\Bridges\ApplicationLatte\LatteFactory;
 use Nette\Bridges\ApplicationLatte\TemplateFactory;
 use Nette\Http\UrlScript;
-use Ninjify\Nunjuck\Toolkit;
 use Tester\Assert;
 
 require_once __DIR__ . '/../bootstrap.php';
@@ -36,7 +33,7 @@ Toolkit::test(function (): void {
 			$template->add('_mail', $message);
 			$message->setHtmlBody($template->__toString());
 
-			$filename = TEMP_DIR . date('Y-m-d H-i-s') . microtime() . '.eml';
+			$filename = Environment::getTestDir() . date('Y-m-d H-i-s') . microtime() . '.eml';
 			file_put_contents($filename, $message->generateMessage());
 			Assert::match('%A%<span class="preheader">Awesome emails.</span>%A%', file_get_contents($filename));
 		});
@@ -52,6 +49,6 @@ Toolkit::test(function (): void {
 
 	$builder = $factory->create();
 	$builder->setFrom('foo@bar.baz');
-	$builder->setTemplateFile(__DIR__ . '/../fixtures/mails/hello.latte');
+	$builder->setTemplateFile(__DIR__ . '/../Fixtures/mails/hello.latte');
 	$builder->send();
 });
