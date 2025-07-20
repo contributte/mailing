@@ -24,7 +24,7 @@ class MailBuilder
 	{
 		$this->sender = $mailer;
 		$this->message = $message ?? new Message();
-		$this->template = new Template(new Engine());
+		$this->template = new MailTemplate(new Engine());
 	}
 
 	public function getTemplate(): Template
