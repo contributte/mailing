@@ -3,13 +3,14 @@ includes:
 
 parameters:
 	level: 9
-	phpVersion: 80100
+	phpVersion: 80200
 
 	scanDirectories:
 		- src
 
 	fileExtensions:
 		- php
+		- phpt
 
 	paths:
 		- src
