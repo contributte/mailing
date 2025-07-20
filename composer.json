@@ -16,7 +16,7 @@
     }
   ],
   "require": {
-    "php": ">=8.1",
+    "php": ">=8.2",
     "nette/application": "^3.2.7",
     "nette/di": "^3.2.4",
     "nette/mail": "^4.0.3",
@@ -51,7 +51,7 @@
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "0.7.x-dev"
+      "dev-master": "0.8.x-dev"
     }
   }
 }
