@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1);
 
-namespace Tests;
+namespace Tests\Cases;
 
 use Contributte\Mailing\IMailSender;
 use Contributte\Mailing\MailBuilder;
