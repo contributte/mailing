@@ -8,7 +8,7 @@
 
 ## Info
 
-The main goal of this package is send emails easily. It has 4 main classes, `MailBuilder`, `MailBuilderFactory`, `MailSender` and `MailTemplateFactory`.
+The main goal of this package is to send emails easily. It has 4 main classes, `MailBuilder`, `MailBuilderFactory`, `MailSender` and `MailTemplateFactory`.
 
 ## Setup
 
@@ -23,7 +23,7 @@ extensions:
 
 ## Configuration
 
-Default configuration looks like this.
+Default configuration looks like this:
 
 ```neon
 mailing:
@@ -35,12 +35,12 @@ mailing:
 ```
 
 Templating and template options are under key **template**. At this moment, there's a default theme (https://github.com/leemunroe/responsive-html-email-template/), simple but good looking.
-This default default layout is located in this package, you don't need to change anything. Unless you want your own layout.
+This default layout is located in the package, you don't need to change anything. Unless you want your own layout.
 
 - The `defaults` should be untouched and it can be considered as base class. Your theme will be extending the default one.
 - The `config` can be considered as child class, define your own theme.
 
-Typical configuration would be override the default theme with some extra features.
+Typical configuration would override the default theme with some extra features.
 
 ```neon
 template:
@@ -63,7 +63,7 @@ Example is better then 1k words.
 public $mailBuilderFactory;
 ```
 
-Thanks to `MailBuilderFactory` we use create `MailBuilder` to setup and finally send email.
+Thanks to the `MailBuilderFactory`, we create the `MailBuilder` to set up and send the email.
 
 ```php
 // Builder
@@ -83,8 +83,8 @@ $mail->setParameters([
 $mail->send();
 ```
 
-At first moment it looks the `MailBuilder` break the SRP, but it's not true. `MailBulderFactory` creates the `MailBuilder`
-and provides the `IMailSender` and `IMailTemplateFactory`. The `MailBuilder` is just tiny wrapper/builder with enjoyable API.
+At first glance, it looks like the `MailBuilder` breaks the SRP, but that's not the case. The `MailBuilderFactory` creates the `MailBuilder`
+and provides the `IMailSender` and `IMailTemplateFactory`. The `MailBuilder` is just a tiny wrapper/builder with an enjoyable API.
 
 ### Template
 
@@ -106,4 +106,4 @@ Each template has many internal variables:
 {/block}
 ```
 
-Each template has many blocks, take a look to source.
+Each template has many blocks, take a look at the source.
