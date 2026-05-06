@@ -37,8 +37,9 @@ class MailingExtension extends CompilerExtension
 
 		$builder->addDefinition($this->prefix('builderFactory'))
 			->setType(IMailBuilderFactory::class)
-			->setFactory(MailBuilderFactory::class)
-			->addSetup('setDefaultSender', [$config->defaultSender]);
+			->setFactory(MailBuilderFactory::class, ['params' => [
+				'defaultSender' => $config->defaultSender,
+			]]);
 
 		$builder->addDefinition($this->prefix('sender'))
 			->setType(IMailSender::class)

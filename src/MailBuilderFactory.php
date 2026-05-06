@@ -6,15 +6,15 @@ class MailBuilderFactory implements IMailBuilderFactory
 {
 	protected ?string $defaultSender = null;
 
+	/**
+	 * @param array{defaultSender?: string|null} $params
+	 */
 	public function __construct(
+		protected array $params,
 		protected IMailSender $sender,
 		protected IMailTemplateFactory $templateFactory,
 	) {
-	}
-
-	public function setDefaultSender(?string $defaultSender): void
-	{
-		$this->defaultSender = $defaultSender;
+		$this->defaultSender = $params['defaultSender'] ?? null;
 	}
 
 	public function create(): MailBuilder
