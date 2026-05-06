@@ -45,10 +45,9 @@ Toolkit::test(function (): void {
 		->andReturn(new Engine());
 
 	$templateFactory = new NetteTemplateFactory(new TemplateFactory($latteFactory), $linkGenerator);
-	$factory = new MailBuilderFactory($sender, $templateFactory);
+	$factory = new MailBuilderFactory(['defaultSender' => 'foo@bar.baz'], $sender, $templateFactory);
 
 	$builder = $factory->create();
-	$builder->setFrom('foo@bar.baz');
 	$builder->setTemplateFile(__DIR__ . '/../Fixtures/mails/hello.latte');
 	$builder->send();
 });

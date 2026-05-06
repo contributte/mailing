@@ -4,21 +4,27 @@ namespace Contributte\Mailing;
 
 class MailBuilderFactory implements IMailBuilderFactory
 {
+	protected ?string $defaultSender = null;
 
-	protected IMailSender $sender;
-
-	protected IMailTemplateFactory $templateFactory;
-
-	public function __construct(IMailSender $sender, IMailTemplateFactory $templateFactory)
-	{
-		$this->sender = $sender;
-		$this->templateFactory = $templateFactory;
+	/**
+	 * @param array{defaultSender?: string|null} $params
+	 */
+	public function __construct(
+		protected array $params,
+		protected IMailSender $sender,
+		protected IMailTemplateFactory $templateFactory,
+	) {
+		$this->defaultSender = $params['defaultSender'] ?? null;
 	}
 
 	public function create(): MailBuilder
 	{
 		$mail = new MailBuilder($this->sender);
 		$mail->setTemplate($this->templateFactory->create());
+
+		if ($this->defaultSender !== null) {
+			$mail->setFrom($this->defaultSender);
+		}
 
 		return $mail;
 	}
