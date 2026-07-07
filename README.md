@@ -75,7 +75,7 @@ template:
 
 ## Usage
 
-Example is better then 1k words.
+The example below shows the typical `MailBuilder` workflow.
 
 ### Builder
 
